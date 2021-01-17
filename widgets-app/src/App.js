@@ -36,34 +36,37 @@ const options = [
     }
 ]
 
-const showAccordion = () => {
-    if (window.location.pathname === '/'){
-        return <Accordion items={items}/>
-    }
-}
+// ############### One method of routing below ###############
+// const showAccordion = () => {
+//     if (window.location.pathname === '/'){
+//         return <Accordion items={items}/>
+//     }
+// }
 
-const showList = () => {
-    if (window.location.pathname === '/list'){
-        return <Search />
-    }
-}
+// const showList = () => {
+//     if (window.location.pathname === '/list'){
+//         return <Search />
+//     }
+// }
 
-const showDropdown = () => {
-    if (window.location.pathname === '/dropdown'){
-        return <Dropdown />
-    }
-}
+// const showDropdown = () => {
+//     if (window.location.pathname === '/dropdown'){
+//         return <Dropdown />
+//     }
+// }
 
-const showTranslate = () => {
-    if (window.location.pathname === '/translate'){
-        return <Translate />
-    }
-}
+// const showTranslate = () => {
+//     if (window.location.pathname === '/translate'){
+//         return <Translate />
+//     }
+// }
 
 export default () => {
     const [selected, setSelected] = useState(options[0])
     return (
         <div>
+            <Header />
+            {/* ############### Second routing method below ############### */}
             <Route path="/">
                 <Accordion items={items} />
             </Route>

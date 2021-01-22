@@ -1,4 +1,4 @@
-import { combineReducers, conbineReducers } from 'redux'
+import { combineReducers } from 'redux'
 
 const songsReducer = () => {
     return [
@@ -9,8 +9,8 @@ const songsReducer = () => {
     ]
 }
 
-const selectedSongReduer = (selectedSong = null, action) => {
-    if (applicationCache.type === 'SONG_SELECTED') {
+const selectedSongReducer = (selectedSong = null, action) => {
+    if (action.type === 'SONG_SELECTED') {
         return action.payload;
     }
     return selectedSong
@@ -19,5 +19,5 @@ const selectedSongReduer = (selectedSong = null, action) => {
 
 export default combineReducers({
     songs: songsReducer,
-    selectedSong: selectedSongReduer
+    selectedSong: selectedSongReducer
 })
